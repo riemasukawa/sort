@@ -28,13 +28,10 @@ int quick_select(int A[], int n, int k){
     A[i]=z;
     i--;
     }
-    else {
-    i++;
-    }
   }
 
   if(l > k) return quick_select(A,l,k);
-  else if(r < k) return quick_select(A+r, n-r, k-r);
+  else if(r < k+1) return quick_select(A+r, n-r, k-r);
   else return pivot;
 }
 
